@@ -27,12 +27,16 @@ class IntroPage extends StatelessWidget {
         children: [
           Expanded(
             flex: 3,
-            child: Container(
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/image.jpeg'),
-                  fit: BoxFit.cover,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: double.infinity,
+                decoration:  BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: AssetImage('/images/image2.jpg'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
