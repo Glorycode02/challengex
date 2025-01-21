@@ -5,21 +5,28 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController _usernameController = TextEditingController();
-    final TextEditingController _passwordController = TextEditingController();
+    final TextEditingController usernameController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextField(
-            controller: _usernameController,
-            decoration: const InputDecoration(
-                border: OutlineInputBorder(), labelText: "Username"),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: usernameController,
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(), labelText: "Username"),
+              ),
+              TextField(
+                obscureText: true,
+                controller: passwordController,
+                decoration: InputDecoration(),
+              )
+            ],
           ),
-          TextField(
-            controller: _passwordController,
-          )
-        ],
+        ),
       ),
     );
   }
