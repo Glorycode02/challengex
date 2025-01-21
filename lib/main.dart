@@ -44,14 +44,27 @@ class IntroPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Welcome to ChallengeX!',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
+                  const Text.rich(
+                    TextSpan(
+                      text: 'Welcome to ', // Default style
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'ChallengeX!',
+                          style: TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.teal,
+                          ),
+                        ),
+                      ],
                     ),
                     textAlign: TextAlign.center,
                   ),
+
                   const SizedBox(height: 16),
                   const Text(
                     'Join fun and engaging challenges with your friends and community. Compete, learn, and grow together!',
@@ -74,18 +87,27 @@ class IntroPage extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 12,
+                        horizontal: 32, // Wider horizontal padding
+                        vertical: 16,   // Taller vertical padding
                       ),
+                      backgroundColor: Colors.teal, // Button background color
+                      foregroundColor: Colors.white, // Text color
+                      shadowColor: Colors.teal.shade100, // Shadow color
+                      elevation: 8, // Shadow elevation
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(12), // Rounded corners
                       ),
                     ),
                     child: const Text(
                       'Get Started',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(
+                        fontSize: 20, // Larger font size
+                        fontWeight: FontWeight.bold, // Bold text
+                        letterSpacing: 1.5, // Spaced out text
+                      ),
                     ),
                   ),
+
                 ],
               ),
             ),
