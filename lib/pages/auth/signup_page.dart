@@ -1,13 +1,15 @@
-import 'package:challengex/pages/auth/signup_page.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final TextEditingController usernameController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
+    final TextEditingController confirmPasswordController = TextEditingController();
+
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
@@ -32,7 +34,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    "Welcome back! Log in to your account",
+                    "Create your account,and Join our big competition community 🏆",
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Colors.grey,
@@ -44,7 +46,7 @@ class LoginPage extends StatelessWidget {
                     controller: usernameController,
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.blue.shade50,
+                      fillColor: Colors.grey.shade100,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15.0),
                         borderSide: BorderSide.none,
@@ -56,11 +58,26 @@ class LoginPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   TextField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey.shade100,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      prefixIcon: const Icon(Icons.email, color: Colors.blueAccent),
+                      labelText: "Email",
+                      labelStyle: const TextStyle(color: Colors.blueAccent),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextField(
                     controller: passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.blue.shade50,
+                      fillColor: Colors.grey.shade100,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15.0),
                         borderSide: BorderSide.none,
@@ -70,14 +87,20 @@ class LoginPage extends StatelessWidget {
                       labelStyle: const TextStyle(color: Colors.blueAccent),
                     ),
                   ),
-                  const SizedBox(height: 30,),
-                  GestureDetector(
-                    onTap: () {},
-                    child: const Text(
-                      "Forgot Password?",
-                      style: TextStyle(
-                        color: Colors.blueAccent,
+                  const SizedBox(height: 20),
+                  TextField(
+                    controller: confirmPasswordController,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey.shade100,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                        borderSide: BorderSide.none,
                       ),
+                      prefixIcon: const Icon(Icons.lock, color: Colors.blueAccent),
+                      labelText: "Confirm Password",
+                      labelStyle: const TextStyle(color: Colors.blueAccent),
                     ),
                   ),
                   const SizedBox(height: 30),
@@ -93,7 +116,7 @@ class LoginPage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 16.0),
                       ),
                       child: const Text(
-                        "Login",
+                        "Sign Up",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
@@ -103,60 +126,12 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Row(
-                    children: [
-                      Expanded(child: Divider(thickness: 1)),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text("Or continue with"),
-                      ),
-                      Expanded(child: Divider(thickness: 1)),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton.icon(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue.shade400,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                        ),
-                        icon: const Icon(Icons.email, color: Colors.white),
-                        label: const Text(
-                          "Google",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      ElevatedButton.icon(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue.shade600,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                        ),
-                        icon: const Icon(Icons.camera, color: Colors.white),
-                        label: const Text(
-                          "Instagram",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SignupPage()));
+                      Navigator.pop(context);
                     },
                     child: const Text(
-                      "Don't have an account? SignUp",
+                      "Already have an account? Login",
                       style: TextStyle(
                         color: Colors.blueAccent,
                       ),

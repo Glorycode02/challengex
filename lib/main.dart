@@ -61,7 +61,7 @@ class IntroPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
-                            color: Colors.teal,
+                            color: Colors.blueAccent,
                           ),
                         ),
                       ],
@@ -94,7 +94,7 @@ class IntroPage extends StatelessWidget {
                         horizontal: 32, // Wider horizontal padding
                         vertical: 16,   // Taller vertical padding
                       ),
-                      backgroundColor: Colors.teal, // Button background color
+                      backgroundColor: Colors.blueAccent, // Button background color
                       foregroundColor: Colors.white, // Text color
                       shadowColor: Colors.teal.shade100, // Shadow color
                       elevation: 8, // Shadow elevation
@@ -111,7 +111,6 @@ class IntroPage extends StatelessWidget {
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),
