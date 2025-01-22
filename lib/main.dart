@@ -33,7 +33,7 @@ class IntroPage extends StatelessWidget {
                 width: double.infinity,
                 decoration:  BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     image: AssetImage('/images/image2.jpg'),
                     fit: BoxFit.cover,
                   ),

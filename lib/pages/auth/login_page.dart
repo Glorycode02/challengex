@@ -95,7 +95,7 @@ class LoginPage extends StatelessWidget {
                     MaterialButton(
                       onPressed: () {},
                       color: Colors.teal,
-                      child: Text(
+                      child: const Text(
                         "Login with Google",
                         style: TextStyle(color: Colors.white),
                       ),
@@ -106,7 +106,7 @@ class LoginPage extends StatelessWidget {
                     MaterialButton(
                       onPressed: () {},
                       color: Colors.teal,
-                      child: Text(
+                      child: const Text(
                         "Login with Instagram",
                         style: TextStyle(color: Colors.white),
                       ),
