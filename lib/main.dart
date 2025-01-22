@@ -1,4 +1,5 @@
 import 'package:challengex/pages/auth/login_page.dart';
+import 'package:challengex/pages/auth/signup_page.dart';
 import 'package:challengex/pages/others/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,9 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: IntroPage(),
       routes: {
-        "/homepage": (context) => const HomePage()
+        "/homepage": (context) => const HomePage(),
+        "/login": (context) => const LoginPage(),
+        "signup": (context) => const SignupPage(),
       },
     );
   }
