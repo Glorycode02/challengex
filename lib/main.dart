@@ -1,4 +1,5 @@
 import 'package:challengex/pages/auth/login_page.dart';
+import 'package:challengex/pages/others/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +14,9 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: IntroPage(),
+      routes: {
+        "/homepage": (context) => const HomePage()
+      },
     );
   }
 }
@@ -32,27 +36,27 @@ class IntroPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Expanded(
-              child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 20
-                      ),
-                  itemCount: imagePaths.length,
-                  itemBuilder: (context, index) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        imagePaths[index],
-                        fit: BoxFit.cover,
-                      ),
-                    );
-                  }),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(20.0),
+          //   child: Expanded(
+          //     child: GridView.builder(
+          //         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          //             crossAxisCount: 2,
+          //             crossAxisSpacing: 10,
+          //             mainAxisSpacing: 20
+          //             ),
+          //         itemCount: imagePaths.length,
+          //         itemBuilder: (context, index) {
+          //           return ClipRRect(
+          //             borderRadius: BorderRadius.circular(10),
+          //             child: Image.asset(
+          //               imagePaths[index],
+          //               fit: BoxFit.cover,
+          //             ),
+          //           );
+          //         }),
+          //   ),
+          // ),
           Expanded(
             flex: 2,
             child: Padding(
