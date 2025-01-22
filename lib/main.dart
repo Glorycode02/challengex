@@ -10,7 +10,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: IntroPage(),
     );
@@ -18,27 +18,39 @@ class MainApp extends StatelessWidget {
 }
 
 class IntroPage extends StatelessWidget {
-  const IntroPage({super.key});
+  IntroPage({super.key});
+
+  final List<String> imagePaths = [
+    'assets/images/image1.jpg',
+    'assets/images/image2.jpg',
+    'assets/images/image3.jpg',
+    'assets/images/image4.jpg',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            flex: 3,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: double.infinity,
-                decoration:  BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: const DecorationImage(
-                    image: AssetImage('/images/image2.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Expanded(
+              child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 20
+                      ),
+                  itemCount: imagePaths.length,
+                  itemBuilder: (context, index) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        imagePaths[index],
+                        fit: BoxFit.cover,
+                      ),
+                    );
+                  }),
             ),
           ),
           Expanded(
@@ -68,7 +80,6 @@ class IntroPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-
                   const SizedBox(height: 16),
                   const Text(
                     'Join fun and engaging challenges with your friends and community. Compete, learn, and grow together!',
@@ -92,14 +103,16 @@ class IntroPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 32, // Wider horizontal padding
-                        vertical: 16,   // Taller vertical padding
+                        vertical: 16, // Taller vertical padding
                       ),
-                      backgroundColor: Colors.blueAccent, // Button background color
+                      backgroundColor:
+                          Colors.blueAccent, // Button background color
                       foregroundColor: Colors.white, // Text color
                       shadowColor: Colors.teal.shade100, // Shadow color
                       elevation: 8, // Shadow elevation
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12), // Rounded corners
+                        borderRadius:
+                            BorderRadius.circular(12), // Rounded corners
                       ),
                     ),
                     child: const Text(
