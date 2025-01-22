@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
       routes: {
         "/homepage": (context) => const HomePage(),
         "/login": (context) => const LoginPage(),
-        "signup": (context) => const SignupPage(),
+        "/signup": (context) => const SignupPage(),
       },
     );
   }
@@ -100,12 +100,7 @@ class IntroPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       // Navigate to the LoginPage
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginPage(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, "/login");
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(

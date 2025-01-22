@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "414725833965",
+    "project_id": "challengex1",
+    "storage_bucket": "challengex1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414725833965:android:97159c7ea054e1c05878e4",
+        "android_client_info": {
+          "package_name": "com.example.challengex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEW2VgwLBFLY80Iw7XU_6S9D9LtW8sTIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

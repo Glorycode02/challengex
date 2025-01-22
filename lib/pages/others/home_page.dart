@@ -5,7 +5,22 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
+      appBar: AppBar(
+        title:const Text.rich(
+          TextSpan(
+            text: "Challenge-",
+            children: [
+              TextSpan(
+                text: "X",
+                style: TextStyle(
+                  color: Colors.blueAccent
+                )
+              )
+            ]
+          )
+        ),
+      ),
       body: Text("Hello user"),
     );
   }
